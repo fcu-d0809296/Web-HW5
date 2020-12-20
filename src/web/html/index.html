@@ -14,7 +14,34 @@
     />
 
     <script>
-      // write you javascript code here
+      //let input = prompt("1 =>攝氏溫度轉換華氏溫度 \n2=>華氏溫度轉換攝氏溫度\n");
+//      if ( (document.getElementById("input-temp").value) == null) {
+//        document.getElementById("error-msg").innerHTML = "輸入溫度不可為空白";
+//      }else {
+//        document.getElementById("error-msg").innerHTML = "";
+//      }
+      
+      var input = 1;
+      changeTempMethod = () => {
+        input = document.getElementById("select-temp").value;
+      }
+      convert = () => { 
+        let tm = document.getElementById("input-temp").value;
+        console.log(tm);
+        if (tm == '') {
+          document.getElementById("error-msg").innerHTML = "輸入溫度不可為空白";
+        } else {
+          document.getElementById("error-msg").innerHTML = " ";
+          if(input == 1) {
+            document.getElementById("result").innerHTML =  "<h3>轉換結果為華氏"+ (5/9*(tm-32)).toFixed(2) + "度</h3>" ;
+          } else if(input == 2) {
+            document.getElementById("result").innerHTML =  "<h3>轉換結果為華氏"+(tm*9/5+32).toFixed(2) + "度</h3>" ;
+          }
+        }
+        //document.getElementById("result").innerHTML = ( "攝氏溫度="+ tm +" => 華氏溫度="+ (5/9*(tm-32)).toFixed(2) )
+      }
+
+      
     </script>
   </head>
 
